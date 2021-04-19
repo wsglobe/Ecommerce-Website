@@ -98,6 +98,10 @@
   }
 }
 
+.card:hover img {
+  box-shadow: 0 2px 12px rgba(0,0,0,.1);
+}
+
 .card h3 {
   margin: 0 0 1rem 0;
   font-size: 1.5rem;
