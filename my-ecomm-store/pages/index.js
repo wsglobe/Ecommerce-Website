@@ -1,9 +1,32 @@
+import { useState } from 'react'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import products from '../products.json'
 import { initiateCheckout } from '../lib/payment'
 
+const defaultCart = {
+  products: {}
+}
+
 export default function Home() {
+
+  const [cart, updateCart] = useState(defaultCart);
+
+  const cartItems = Object.keys(cart.products).map(key => {
+    const product = products.find(({ id }) => `${id}` === `${key}`);
+    return {
+      ...cart.products[key],
+      pricePerUnit: product.price
+    }
+  });
+
+  const subtotal = cartItems.reduce((accumulator, { pricePerUnit, quantity }) => {
+    return accumulator + ( pricePerUnit * quantity );
+  }, 0);
+
+  const quantity = cartItems.reduce((accumulator, { quantity }) => {
+    return accumulator + quantity;
+  }, 0);
   return (
     <div className={styles.container}>
       <Head>
