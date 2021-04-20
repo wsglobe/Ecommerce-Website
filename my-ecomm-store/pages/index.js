@@ -44,6 +44,17 @@ export default function Home() {
       return cart;
     })
   }
+
+  function checkout() {
+    initiateCheckout({
+      lineItems: cartItems.map(({ id, quantity }) => {
+        return {
+          price: id,
+          quantity
+        }
+      })
+    })
+  }
   return (
     <div className={styles.container}>
       <Head>
