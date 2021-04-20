@@ -55,6 +55,7 @@ export default function Home() {
       })
     })
   }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -69,6 +70,14 @@ export default function Home() {
 
         <p className={styles.description}>
           The best space jellyfish swag in the universe!
+        </p>
+
+        <p className={styles.description}>
+          <strong>Items:</strong> {quantity}
+          <br />
+          <strong>Total:</strong> ${subtotal}
+          <br />
+          <button className={styles.button} onClick={checkout}>Check Out</button>
         </p>
 
         <ul className={styles.grid}>
