@@ -27,6 +27,23 @@ export default function Home() {
   const quantity = cartItems.reduce((accumulator, { quantity }) => {
     return accumulator + quantity;
   }, 0);
+
+  function addToCart({ id }) {
+    updateCart((prev) => {
+      let cart = {...prev};
+
+      if ( cart.products[id] ) {
+        cart.products[id].quantity = cart.products[id].quantity + 1;
+      } else {
+        cart.products[id] = {
+          id,
+          quantity: 1
+        }
+      }
+
+      return cart;
+    })
+  }
   return (
     <div className={styles.container}>
       <Head>
