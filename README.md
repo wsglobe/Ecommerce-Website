@@ -17,7 +17,12 @@ Ecommerce places a large role in our day to day lives from buying something sill
 * Integrate Stripe Checkout to let people purchase your products
 * Deploy app to Vercel
 
-## 
+## 🖥 Tech Stack
+
+* React
+* Next.js
+* Stripe
+* Vercel
 
 ## 🧰 Future Development
 
@@ -28,10 +33,4 @@ Ecommerce places a large role in our day to day lives from buying something sill
 * More info, photos, and interactions on a product page
 * Sharing a product
 * User Authentication
-*
-*
-*
-*
-*
-*
 
