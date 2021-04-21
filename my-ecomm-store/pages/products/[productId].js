@@ -35,7 +35,7 @@ export default function Product({ product }) {
           </p>
           <p>
             <button className={styles.button} onClick={() => addToCart({ id })}>
-              Buy
+              Add to Cart
             </button>
           </p>
         </div>
