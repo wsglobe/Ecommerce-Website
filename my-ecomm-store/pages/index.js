@@ -16,7 +16,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <p className={styles.description}>
-          The best space jellyfish swag on the web!
+          The best space jellyfish swag in the universe!
         </p>
 
         <ul className={styles.grid}>

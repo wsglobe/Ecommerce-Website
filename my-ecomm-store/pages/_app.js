@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import { CartContext, useCartState } from '../hooks/use-cart'
+import Nav from '../components/Nav'
 
 function MyApp({ Component, pageProps }) {
 
@@ -7,7 +8,7 @@ function MyApp({ Component, pageProps }) {
   
   return (
     <CartContext.Provider value={cart}>
-
+      <Nav />
       <Component {...pageProps} />
     </CartContext.Provider>
   );
