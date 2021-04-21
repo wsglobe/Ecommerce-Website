@@ -30,7 +30,7 @@ export default function Home() {
                   <p>${ price }</p>
                   <p>{ description }</p>
                   <p>
-                    <button className={styles.button} onClick={() => addToCart({ id })}>Buy</button>
+                    <button className={styles.button} onClick={() => addToCart({ id })}>Add to Cart</button>
                   </p>
                 </a>
               </li>
