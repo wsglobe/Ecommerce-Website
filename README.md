@@ -7,3 +7,13 @@ Ecommerce places a large role in our day to day lives from buying something sill
 
 ## 🔍 Project Overview
 
+* Create a new Next.js app from scratch
+* Add and manage a dynamic grid of products
+* Set up and configure products in Stripe
+* Manage local state with React's useState hook
+* Create a custom React hook
+* Use the React Context API to manage global state
+* Store and persist app state with localstorage
+* Integrate Stripe Checkout to let people purchase your products
+* Deploy app to Vercel
+
