@@ -17,3 +17,21 @@ Ecommerce places a large role in our day to day lives from buying something sill
 * Integrate Stripe Checkout to let people purchase your products
 * Deploy app to Vercel
 
+## 
+
+## 🧰 Future Development
+
+* Managing your products with a headless CMS
+* Supporting Stripe coupon / promo codes in the app
+* Adding tests to harden business logic
+* Create a success page that maximizes engagement
+* More info, photos, and interactions on a product page
+* Sharing a product
+* User Authentication
+*
+*
+*
+*
+*
+*
+
