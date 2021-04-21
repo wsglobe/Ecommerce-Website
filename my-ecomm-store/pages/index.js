@@ -1,84 +1,22 @@
-import { useState } from 'react'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import products from '../products.json'
-import { initiateCheckout } from '../lib/payment'
-import useCart from '../hooks/use-cart'
-
-const defaultCart = {
-  products: {}
-}
+import { useCart } from '../hooks/use-cart'
 
 export default function Home() {
 
-  const [cart, updateCart] = useState(defaultCart);
-
-  const cartItems = Object.keys(cart.products).map(key => {
-    const product = products.find(({ id }) => `${id}` === `${key}`);
-    return {
-      ...cart.products[key],
-      pricePerUnit: product.price
-    }
-  });
-
-  const subtotal = cartItems.reduce((accumulator, { pricePerUnit, quantity }) => {
-    return accumulator + ( pricePerUnit * quantity );
-  }, 0);
-
-  const quantity = cartItems.reduce((accumulator, { quantity }) => {
-    return accumulator + quantity;
-  }, 0);
-
-  function addToCart({ id }) {
-    updateCart((prev) => {
-      let cart = {...prev};
-
-      if ( cart.products[id] ) {
-        cart.products[id].quantity = cart.products[id].quantity + 1;
-      } else {
-        cart.products[id] = {
-          id,
-          quantity: 1
-        }
-      }
-
-      return cart;
-    })
-  }
-
-  function checkout() {
-    initiateCheckout({
-      lineItems: cartItems.map(({ id, quantity }) => {
-        return {
-          price: id,
-          quantity
-        }
-      })
-    })
-  }
+  const { addToCart } = useCart();
 
   return (
     <div className={styles.container}>
       <Head>
-        <title>Space Jelly Shop</title>
+        <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Space Jelly Shop
-        </h1>
-
         <p className={styles.description}>
-          The best space jellyfish swag in the universe!
-        </p>
-
-        <p className={styles.description}>
-          <strong>Items:</strong> {quantity}
-          <br />
-          <strong>Total:</strong> ${subtotal}
-          <br />
-          <button className={styles.button} onClick={checkout}>Check Out</button>
+          The best space jellyfish swag on the web!
         </p>
 
         <ul className={styles.grid}>

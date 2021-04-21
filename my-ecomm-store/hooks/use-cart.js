@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, createContext, useContext } from 'react'
 import products from '../products.json'
 import { initiateCheckout } from '../lib/payments.js'
 
@@ -6,7 +6,9 @@ const defaultCart = {
   products: {}
 }
 
-export default function useCart() {
+export const CartContext = createContext();
+
+export function useCartState() {
   
   const [cart, updateCart] = useState(defaultCart);
 
@@ -62,4 +64,9 @@ export default function useCart() {
     checkout
   }
 
+}
+
+export function useCart() {
+  const cart = useContext(CartContext);
+  return cart;
 }
