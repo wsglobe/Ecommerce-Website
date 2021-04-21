@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { FaShoppingCart } from 'react-icons/fa'
 import styles from '../styles/Cart.module.css'
 import { useCart } from '../hooks/use-cart.js'
-import products from '../../products.json'
+import products from '../products.json'
 import Table from '../components/Table'
 
 const columns = [
