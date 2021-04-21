@@ -1,6 +1,9 @@
 import { useState, createContext, useContext, useEffect } from 'react'
 import products from '../products.json'
 import { initiateCheckout } from '../lib/payments.js'
+import { getStorageItem, setStorageItem } from '../lib/storage.js'
+
+const CART_STATE_KEY = 'cart';
 
 const defaultCart = {
   products: {}
@@ -11,20 +14,17 @@ export const CartContext = createContext();
 export function useCartState() {
   
   const [cart, updateCart] = useState(defaultCart);
-  // parse JSON string then update cart state
+  
   useEffect(() => {
-    const stateFromStorage = window.localStorage.getItem('spacejelly_cart');
-    const data = stateFromStorage && JSON.parse(stateFromStorage);
+    const data = getStorageItem(CART_STATE_KEY);
     if ( data ) {
       updateCart(data);
     }
   }, []);
 
-  // turn cart state into JSON string and save that data into browser
   useEffect(() => {
-    const data = JSON.stringify(cart);
-    window.localStorage.setItem('spacejelly_cart', data);
-  }, [cart])
+    setStorageItem(CART_STATE_KEY, cart);
+  }, [cart]);
 
   const cartItems = Object.keys(cart.products).map(key => {
     const product = products.find(({ id }) => `${id}` === `${key}`);
@@ -72,6 +72,7 @@ export function useCartState() {
 
   return {
     cart,
+    cartItems,
     subtotal,
     quantity,
     addToCart,
