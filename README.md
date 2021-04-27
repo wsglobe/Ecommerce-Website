@@ -2,6 +2,10 @@
 
 * Demo: https://my-ecomm-store-eosin.vercel.app/
 
+
+![project-1](https://user-images.githubusercontent.com/63996774/116184504-85f3c880-a6e5-11eb-98da-a7da6e393d36.png)
+
+
 ## Introduction
 Ecommerce places a large role in our day to day lives from buying something silly on Amazon to ordering a prescription that can help you survive. This makes the decisions we make for how we build an app and what kind of experience we provide important. The experience we need to provide to our customers needs to be personalized from showing up-to-date product information and providing a shopping cart they can use to purchase those products.
 
