@@ -33,4 +33,5 @@ Ecommerce places a large role in our day to day lives from buying something sill
 * More info, photos, and interactions on a product page
 * Sharing a product
 * User Authentication
+* Managing product inventory
 
